@@ -1,6 +1,6 @@
 pipeline{
     agent{
-        label "master"
+        label "kworker2"
     }
 
 	environment {
