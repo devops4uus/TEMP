@@ -36,7 +36,7 @@ pipeline{
             ansiblePlaybook( 
         playbook: 'deploy.yml',
         inventory: 'hosts.ini', 
-        credentialsId: 'devops-ansible',
+        credentialsId: 'devops2-ansible',
         colorized: true) 
             }
         }
