@@ -33,9 +33,9 @@ pipeline{
             steps{
         //    ansiblePlaybook(credentialsId: 'irfanshaikh-ansible', inventory: 'hosts.ini', playbook: 'deploy.yml')
             ansiblePlaybook( 
-        playbook: 'pdeploy.yml',
+        playbook: 'deploy.yml',
         inventory: 'hosts.ini', 
-        credentialsId: 'irfanshaikh-ansible',
+        credentialsId: 'devops-ansible',
         colorized: true) 
             }
         }
