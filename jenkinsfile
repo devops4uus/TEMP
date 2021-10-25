@@ -28,7 +28,7 @@ pipeline{
                     branches: [[name: '*/kube-cluster']],
                     doGenerateSubmoduleConfigurations: false, 
                     extensions: [], submoduleCfg: [],
-                    userRemoteConfigs: [[credentialsId: '', url: "${git_url}"]]])
+                    userRemoteConfigs: [[credentialsId: 'github-cred', url: "https://github.com/devops4uus/TEMP.git"]]])
                  }
 
                                  }
