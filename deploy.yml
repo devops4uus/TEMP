@@ -5,7 +5,7 @@
     namespace: ""
     imageTag: ""
     ansible_python_interpreter:  /usr/bin/python3
-  remote_user: irfanshaikh
+  remote_user: devops
   become: yes
   tasks:
     - name: "Docker file copy"
