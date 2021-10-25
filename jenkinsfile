@@ -30,8 +30,9 @@ pipeline{
                                  }
 
         stage("Ansible-deployment"){
+            steps{
            ansiblePlaybook(credentialsId: 'irfanshaikh-ansible', inventory: 'hosts.ini', playbook: 'deploy.yml')
-        
+            }
         }
         }                         
 
