@@ -1,0 +1,42 @@
+/  Pipeline to deploy MongooseIM application in remote server
+def app_name = "mongooseim"
+def git_url = "https://github.com/devops4uus/TEMP.git"
+
+pipeline{
+    agent{
+        label "master"
+    }
+
+	environment {
+        PEM_PATH = "${env.WORKSPACE}"
+        CONFIG_PATH = "${env.WORKSPACE}/rel/files"
+		OLD_STRING = "{{node_name}}"
+
+    }	
+
+    stages{
+	
+		stage("cleanup workspace") {
+			steps {
+				cleanWs()
+		
+			}
+			}
+        stage("Code Checkout"){
+            steps{
+                checkout([$class: 'GitSCM',
+                    branches: [[name: '*/kube-cluster']],
+                    doGenerateSubmoduleConfigurations: false, 
+                    extensions: [], submoduleCfg: [],
+                    userRemoteConfigs: [[credentialsId: '', url: "${git_url}"]]])
+                 }
+
+                                 }
+
+        stage("Ansible-deployment"){
+           ansiblePlaybook(credentialsId: 'irfanshaikh-ansible', inventory: 'hosts.ini', playbook: 'deploy.yml')
+        
+        }
+        }                         
+
+           }

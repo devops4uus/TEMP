@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: pythonapp
-        image: registry.devops4u.xyz/pythonapp8:v1 
+        image: registry.devops4u.xyz/pythonapp9:v1 
         ports:
         - containerPort: 5000
 

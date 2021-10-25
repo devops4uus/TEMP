@@ -5,7 +5,7 @@
     namespace: ""
     imageTag: ""
     ansible_python_interpreter:  /usr/bin/python3
-   remote_user: irfanshaikh
+  remote_user: irfanshaikh
   become: yes
   tasks:
     - name: "Docker file copy"
@@ -21,7 +21,7 @@
       docker_image:
        build:
         path: /opt/uat/src/
-       name: registry.devops4u.xyz/pythonapp8:v1
+       name: registry.devops4u.xyz/pythonapp9:v1
        tag: v1
        push: yes
        source: build
