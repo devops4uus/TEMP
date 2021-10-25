@@ -37,5 +37,12 @@
       shell: sudo kubectl get deployment,pods,rs 
       register: getdeploy
     - debug: msg="{{ getdeploy.stdout_lines }}"
+    - name:  DEPLOYMENT STATUS
+      become_user: root
+      shell: sleep 15 && sudo kubectl get deployment,pods,rs 
+      register: getdeploy
+    - debug: msg="{{ getdeploy.stdout_lines }}"
+    
+    
 
 
