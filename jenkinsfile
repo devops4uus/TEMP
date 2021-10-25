@@ -31,6 +31,7 @@ pipeline{
 
         stage("Ansible-deployment"){
             steps{
+	    sh "which ansible"
         //    ansiblePlaybook(credentialsId: 'irfanshaikh-ansible', inventory: 'hosts.ini', playbook: 'deploy.yml')
             ansiblePlaybook( 
         playbook: 'pdeploy.yml',
