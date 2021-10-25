@@ -34,12 +34,12 @@
     - debug: msg="{{ deployment.stdout_lines }}"
     - name:  DEPLOYMENT STATUS
       become_user: root
-      shell: sudo kubectl get deployment,pods,rs 
+      shell: sudo kubectl get deployment,pods,rs &&  kubectl describe deploy pythonapp-deployment | tail
       register: getdeploy
     - debug: msg="{{ getdeploy.stdout_lines }}"
     - name:  DEPLOYMENT STATUS
       become_user: root
-      shell: sleep 15 && sudo kubectl get deployment,pods,rs 
+      shell: sleep 15 && sudo kubectl get deployment,pods,rs  &&  kubectl describe deploy pythonapp-deployment | tail
       register: getdeploy
     - debug: msg="{{ getdeploy.stdout_lines }}"
     
