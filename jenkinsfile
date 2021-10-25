@@ -31,6 +31,7 @@ pipeline{
 
         stage("Ansible-deployment"){
             steps{
+                //    ansiblePlaybook(crede
         //    ansiblePlaybook(credentialsId: 'devops-ansible', inventory: 'hosts.ini', playbook: 'deploy.yml')
             ansiblePlaybook( 
         playbook: 'deploy.yml',
