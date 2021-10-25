@@ -1,6 +1,6 @@
 /  Pipeline to deploy MongooseIM application in remote server
-def app_name = "mongooseim"
-def git_url = "https://github.com/devops4uus/TEMP.git"
+// def app_name = "mongooseim"
+// def git_url = "https://github.com/devops4uus/TEMP.git"
 
 pipeline{
     agent{
