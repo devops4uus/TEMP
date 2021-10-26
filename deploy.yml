@@ -2,7 +2,7 @@
 - hosts: master
   vars:
     imagename: ""
-    namespace: ""
+    namespaces: ""
     imageTag: ""
     ansible_python_interpreter:  /usr/bin/python3
   remote_user: devops
