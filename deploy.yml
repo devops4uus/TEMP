@@ -21,7 +21,7 @@
       docker_image:
        build:
         path: /opt/uat/src/
-       name: registry.devops4u.xyz/pythonapp10:v1
+       name: registry.devops4u.xyz/pythonapp:v1
        tag: v1
        push: yes
        source: build
