@@ -28,7 +28,7 @@ pipeline{
         stage("cleaning  directory"){
             steps{
                  script { 
-                 cleanup.workspacecleanup(ansiblejob)
+                 cleanup.workspacecleanup("ansiblejob")
                  }
                  }
 
