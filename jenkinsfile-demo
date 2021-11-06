@@ -1,0 +1,45 @@
+@library("development-demo")
+pipeline{
+    agent{
+        label "kworker2"
+    }
+
+	environment {
+        PEM_PATH = "${env.WORKSPACE}"
+        CONFIG_PATH = "${env.WORKSPACE}/rel/files"
+		OLD_STRING = "{{node_name}}"
+
+    }	
+
+    stages{
+	
+
+        stage("Code Checkout"){
+            steps{
+                checkout([$class: 'GitSCM',
+                    branches: [[name: '*/kube-cluster']],
+                    doGenerateSubmoduleConfigurations: false, 
+                    extensions: [], submoduleCfg: [],
+                    userRemoteConfigs: [[credentialsId: 'github-cred', url: "https://github.com/devops4uus/TEMP.git"]]])
+                 }
+
+                                 }
+
+        stage("cleaning  directory"){
+            steps{
+                 script { 
+                 cleanup.workspacecleanup(workspace)
+                 }
+                 }
+
+                                 }
+
+
+
+
+
+
+        
+        }                         
+
+           }
