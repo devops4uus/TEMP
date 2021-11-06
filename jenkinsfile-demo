@@ -1,4 +1,4 @@
-@library('development-demo') _
+@Library('deployment-demo') _
 pipeline{
     agent{
         label "kworker2"
